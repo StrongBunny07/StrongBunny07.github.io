@@ -21,6 +21,17 @@ body {
   line-height: 1.85;
 }
 
+a,
+button,
+summary,
+.nes-pointer {
+  cursor: pointer;
+}
+
+a {
+  color: var(--ink);
+}
+
 .page-shell {
   width: min(1080px, calc(100% - 32px));
   margin: 34px auto;
@@ -50,6 +61,18 @@ body {
 }
 
 .contact-row .nes-btn { font-family: inherit; font-size: 10px; }
+
+.contact-row .nes-btn:not(.is-primary) {
+  color: var(--ink);
+  background-color: #fff;
+}
+
+.contact-row .nes-btn:hover,
+.contact-row .nes-btn:focus-visible {
+  color: var(--ink);
+  background-color: #f2dd3e;
+  text-decoration: none;
+}
 
 .section-grid, .project-grid {
   display: grid;
