@@ -1,0 +1,166 @@
+:root {
+  --ink: #20212a;
+  --paper: #f4f0e4;
+  --blue: #283593;
+  --pink: #e72f87;
+  --grey: #6d6d75;
+}
+
+* { box-sizing: border-box; }
+
+html { background: #c4c1bb; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: #c4c1bb;
+  background-image: radial-gradient(#aaa7a1 1px, transparent 1px);
+  background-size: 5px 5px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 32px));
+  margin: 34px auto;
+}
+
+.hero { padding: 32px 34px 28px; }
+
+.hero h1 {
+  margin: 10px 0 16px;
+  color: #fff;
+  font-size: clamp(32px, 7vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.project-type, .tag-row, footer { font-size: 10px; }
+.intro { max-width: 670px; margin: 0; color: #fff; line-height: 2; }
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  color: #d6d6d6;
+  font-size: 10px;
+}
+
+.contact-row .nes-btn { font-family: inherit; font-size: 10px; }
+
+.section-grid, .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.panel, .project-card { padding: 22px 24px; }
+.panel > p:not(.title), .project-card > p:not(.title) { margin: 0 0 16px; }
+
+.stat-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0 3px;
+  font-size: 10px;
+}
+
+.stat-line strong { color: var(--blue); }
+.muted { color: var(--grey); font-size: 10px; }
+
+.skill-list { margin: 0; }
+.skill-list div { margin: 0 0 14px; }
+.skill-list div:last-child { margin-bottom: 0; }
+.skill-list dt { color: var(--pink); font-size: 10px; }
+.skill-list dd { margin: 2px 0 0; font-size: 11px; }
+
+.work-section { margin-top: 36px; }
+.section-heading { display: flex; align-items: center; gap: 14px; margin: 0 0 14px 4px; }
+.section-heading h2 { margin: 0; font-size: 18px; line-height: 1.3; }
+.pixel-dot { width: 12px; height: 12px; background: var(--pink); box-shadow: 4px 4px 0 var(--ink); }
+
+.coursework-section { margin-top: 36px; }
+.coursework-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+.course-group { padding: 0; }
+.course-group summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  list-style: none;
+  color: var(--blue);
+  font-size: 11px;
+}
+.course-group summary:hover { background-color: #e7e7e7; }
+.course-group summary:focus-visible { outline: 4px solid var(--pink); outline-offset: -4px; }
+.course-group summary::-webkit-details-marker { display: none; }
+.course-group summary::before { content: "+"; color: var(--pink); }
+.course-group[open] summary::before { content: "−"; }
+.course-group summary span:first-of-type { margin-right: auto; }
+.course-group summary span:last-of-type { color: var(--grey); font-size: 9px; }
+.course-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms steps(5, end);
+}
+.course-group[open] .course-content { grid-template-rows: 1fr; }
+.course-content ul {
+  margin: 0;
+  padding: 4px 20px 18px 42px;
+  border-top: 4px solid var(--ink);
+  font-size: 10px;
+  line-height: 1.75;
+  min-height: 0;
+  overflow: hidden;
+}
+.course-group li { margin: 7px 0; padding-left: 4px; }
+
+.project-card { display: flex; flex-direction: column; }
+.project-card .project-type { margin-top: 0; color: var(--blue); line-height: 1.5; }
+.project-card .nes-list { margin: auto 0 15px; padding-left: 24px; }
+.project-card li { margin-bottom: 10px; }
+.tag-row { margin: 0 !important; color: var(--grey); line-height: 1.7; }
+
+.achievements { margin-top: 24px; padding: 22px 24px; }
+.achievement-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.achievement-grid p { margin: 0; font-size: 10px; line-height: 1.7; }
+.achievement-grid strong, .achievement-grid span { display: block; }
+.achievement-grid strong { color: #f2dd3e; margin-bottom: 6px; }
+.achievement-grid span { color: #fff; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 4px 0;
+  color: #55545a;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .page-shell { width: min(100% - 20px, 600px); margin: 16px auto; }
+  .hero { padding: 24px 20px; }
+  .hero h1 { font-size: clamp(28px, 12vw, 46px); }
+  .section-grid, .project-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 18px; }
+  .coursework-list { grid-template-columns: 1fr; }
+  .achievement-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .panel, .project-card, .achievements { padding: 20px 18px; }
+  footer { display: block; }
+  footer span { display: block; margin-bottom: 8px; }
+}
+
+@media (max-width: 430px) {
+  body { font-size: 11px; }
+  .contact-row { gap: 12px; }
+  .achievement-grid { grid-template-columns: 1fr; }
+}
