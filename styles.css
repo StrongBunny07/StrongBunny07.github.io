@@ -22,9 +22,7 @@ body {
 }
 
 a,
-button,
-summary,
-.nes-pointer {
+button {
   cursor: pointer;
 }
 
